@@ -1,12 +1,21 @@
-const getLength = (value) => (value && value.length !== undefined) ? value.length : 0;
-
-console.log(getLength(1));
-console.log(getLength('1'));
-console.log(getLength(['1', '2', '3']));
-console.log(getLength(true));
-console.log(getLength(false));
-console.log(getLength({isPrivate: false}));
-console.log(getLength({isPrivate: false, length: 1}));
+const getLength = (value) => {
+  if (value && value.length !== undefined) {
+    console.log(value.length);
+  } else if (value instanceof Map || value instanceof Set) {
+    console.log(value.size);
+  } else {
+    console.log(0);
+  }
+};
+getLength(new Set([1, 2, 3, 4, 5]));
+getLength(new Map([[1, 'one'], [2, 'two']]));
+getLength(1);
+getLength('1');
+getLength(['1', '2', '3']);
+getLength(true);
+getLength(false);
+getLength({isPrivate: false});
+getLength({isPrivate: false, length: 1});
 
 //Если структура объекта содержит миллион Node,
 // то рекурсивное решение может привести к переполнению стека вызовов из-за большой глубины рекурсии.
@@ -50,6 +59,34 @@ const tree4 = {
   left: {value: 2, left: {value: 3}}
 };
 
-console.log(compare(tree1, tree2)); // true
-console.log(compare(tree1, tree3)); // false
-console.log(compare(tree1, tree4)); // false
+// console.log(compare(tree1, tree2)); // true
+// console.log(compare(tree1, tree3)); // false
+// console.log(compare(tree1, tree4)); // false
+
+
+//// question for lesson
+
+
+//#1
+
+
+// let a = 'Hello';
+// if (1 === 1) {
+//   console.log(a);
+//
+//   let a = 'World';
+// }
+// Что будет в консоле
+// Что измениться если закомментировать строчку 68
+
+
+//#2
+
+// let x = [] + 1 + 2
+// let x = [1] + false
+// let x = [1,2,3,] +[4,5,6]
+// let x = {}+1
+// let x = function(){}+1
+//
+//   console.log(x);
+//   console.log(typeof x);
