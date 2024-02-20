@@ -29,14 +29,18 @@ console.log(counter4);
 
 //Используя Object.create():
 
-const counter5 = Object.create({ count: 0});
-console.log(counter5)
+const counter5 = Object.create({}, {
+  count: {
+    enumerable: true, value: 0
+  }
+});
+console.log( counter5);
 
 
 //Используя Object.assign():
 
-let counter6 = Object.assign({ count: 0});
-console.log(counter6)
+let counter6 = Object.assign({count: 0});
+console.log(counter6);
 
 
 // Задание 2 – Скопировать объект counter всеми возможными способами;
@@ -94,9 +98,10 @@ console.log(copy7 === counter);//false
 // Используя литерал функции:
 
 function makeCounter() {
-  return { count: 0};
+  return {count: 0};
 }
-console.log(makeCounter())
+
+console.log(makeCounter());
 
 //Используя функцию-конструктор:
 
@@ -108,7 +113,7 @@ function makeCounter2() {
   return new Counter();
 }
 
-console.log(makeCounter2())
+console.log(makeCounter2());
 
 //Используя class (синтаксический сахар над функцией конструктором)
 
@@ -122,22 +127,30 @@ function makeCounter3() {
   return new Counter1();
 }
 
-console.log(makeCounter3())
+console.log(makeCounter3());
 
 //Используя конструктор Object:
 function makeCounter4() {
-  return new Object({ count: 0});
+  return new Object({count: 0});
 }
-console.log(makeCounter4())
+
+console.log(makeCounter4());
+
 //Используя Object.create():
 function makeCounter5() {
-  return Object.create({ count: 0});
+  return Object.create({}, {
+    count: {
+      enumerable: true, value: 0
+    }
+  });
 }
-console.log(makeCounter5())
+
+console.log(makeCounter5());
 
 //Используя Object.assign():
 function makeCounter6() {
-  return Object.assign({ count: 0});
+  return Object.assign({count: 0});
 }
-console.log(makeCounter6())
+
+console.log(makeCounter6());
 
