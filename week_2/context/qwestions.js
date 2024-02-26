@@ -1,4 +1,3 @@
-"use strict";
 const sayHello = () => console.log(`Hi,I'm ${this.name}`);
 const person = {
   name: 'Ivan',
