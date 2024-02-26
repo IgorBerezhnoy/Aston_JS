@@ -1,3 +1,4 @@
+"use strict";
 const getLength = (value) => {
   if (value && value.length !== undefined) {
     console.log(value.length);
@@ -7,15 +8,15 @@ const getLength = (value) => {
     console.log(0);
   }
 };
-getLength(new Set([1, 2, 3, 4, 5]));
-getLength(new Map([[1, 'one'], [2, 'two']]));
-getLength(1);
-getLength('1');
-getLength(['1', '2', '3']);
-getLength(true);
-getLength(false);
-getLength({isPrivate: false});
-getLength({isPrivate: false, length: 1});
+// getLength(new Set([1, 2, 3, 4, 5]));
+// getLength(new Map([[1, 'one'], [2, 'two']]));
+// getLength(1);
+// getLength('1');
+// getLength(['1', '2', '3']);
+// getLength(true);
+// getLength(false);
+// getLength({isPrivate: false});
+// getLength({isPrivate: false, length: 1});
 
 //Если структура объекта содержит миллион Node,
 // то рекурсивное решение может привести к переполнению стека вызовов из-за большой глубины рекурсии.
@@ -81,20 +82,21 @@ const tree4 = {
 
 
 //#2
-
-let x = [] + 1 + 2;
-// let x = [1] + false
-// let x = [1,2,3,] +[4,5,6]
-// let x = {}+1
-// let x = function(){}+1
 //
-console.log(x);
-console.log(typeof x);
+// let x = [] + 1 + 2;
+// // let x = [1] + false
+// // let x = [1,2,3,] +[4,5,6]
+// // let x = {}+1
+// // let x = function(){}+1
+// //
+// console.log(x);
+// console.log(typeof x);
 
 //------
-// var count = 100
-//
+var count = 100
+
 // function getCount () {
+//   debugger
 //   if (count){
 //     var count = 101
 //   }
@@ -102,8 +104,9 @@ console.log(typeof x);
 // }
 //
 // getCount()
-//
-// console.log(1 == [1])
+
+// console.log([5]+5)
+
 //
 // console.log(017 == '017');
 // console.log(018 == '018');
@@ -127,12 +130,12 @@ console.log(typeof x);
 // }
 //
 // b();
-console.log([] == []);
-
-console.log(+[] == []);
-
-const obj = {
-  '0': 'first',
-  '1': 'second',
-};
-
+// console.log([] == []);
+//
+// console.log(+[] == []);
+//
+// const obj = {
+//   '0': 'first',
+//   '1': 'second',
+// };
+//
