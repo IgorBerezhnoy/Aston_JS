@@ -13,9 +13,8 @@ const printArrWithDelay = (arr, delay = 3000) => {
   arr.forEach((el, i) => {
     setTimeout(() => {
       console.log(i);
-    }, delay * i);
+    }, delay * (i+1));
   });
   console.log('iteration finished');
 };
-printArrWithDelay(arr, delay);
 printArrWithDelay(arr, delay);
