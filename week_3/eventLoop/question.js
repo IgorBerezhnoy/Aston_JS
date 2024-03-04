@@ -1,7 +1,8 @@
 console.log(1);
 new Promise((reject, resolve) => {
   reject(2);
-}).then(res => {
+})
+  .then(res => {
   console.log(res);
   return Promise.reject(3);
 })
@@ -15,3 +16,6 @@ new Promise((reject, resolve) => {
   .catch(err => console.log('error', err))
   .then(console.log);
 console.log(6);
+
+// 1 6 2 3 5
+
